@@ -1,0 +1,10 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.UsersList {
+  width: 30%;
+  height: auto;
+}
