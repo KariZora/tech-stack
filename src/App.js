@@ -3,6 +3,8 @@ import axios from "axios";
 import "./App.css";
 import Alphabat from "./components/Alphabat/Alphabat";
 import Container from "./components/Container/Container";
+import { Switch, Route } from "react-router";
+import UsersBirthday from "./components/UsersBirthday/UsersBirthday";
 
 function App() {
   const [appState, setAppState] = useState({ users: null });
@@ -20,9 +22,16 @@ function App() {
 
   return (
     <div className="App">
-      <Container>
-        <Alphabat users={appState.users} />
-      </Container>
+      <Switch>
+        <Container>
+          <Route path="/">
+            <Alphabat users={appState.users} />
+          </Route>
+        </Container>
+        <Route path="/user-birthday">
+          <UsersBirthday />
+        </Route>
+      </Switch>
     </div>
   );
 }

@@ -15,17 +15,35 @@ const Alphabat = (props) => {
         key={user.id}
         lastName={user.lastName}
         firstName={user.firstName}
+        dob={user.dob}
+        month={
+          user.dob.slice(5, 7) === "11"
+            ? "November"
+            : user.dob.slice(5, 7) === "12"
+            ? "December"
+            : user.dob.slice(5, 7) === "01"
+            ? "January"
+            : user.dob.slice(6, 7) === "2"
+            ? "February"
+            : user.dob.slice(6, 7) === "3"
+            ? "March "
+            : user.dob.slice(6, 7) === "4"
+            ? "April "
+            : user.dob.slice(6, 7) === "5"
+            ? "May"
+            : user.dob.slice(6, 7) === "6"
+            ? "June"
+            : user.dob.slice(6, 7) === "7"
+            ? "July"
+            : user.dob.slice(6, 7) === "8"
+            ? "August"
+            : user.dob.slice(6, 7) === "9"
+            ? "September"
+            : "October"
+        }
       />
     );
   };
-
-  // const filterFunction = () => {
-  //   for (var i = 0; i < users.length; i++) {
-  //     if (users[i].population > 1000000) {
-  //       millionPlusCities.push(cities[i]);
-  //     }
-  //   }
-  // };
 
   if (!users || users.length === 0) return <p>Нет данных.</p>;
   return (
