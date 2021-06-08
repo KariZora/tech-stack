@@ -10,8 +10,8 @@ const UsersItem = ({ lastName, firstName, dob, month }) => {
           {lastName} {firstName}
         </Link>
         <form>
-          <input type="radio" /> not active
-          <input type="radio" /> active
+          <input type="radio" value="false" checked /> not active
+          <input type="radio" value="true" /> active
         </form>
       </li>
 
